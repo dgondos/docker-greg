@@ -16,5 +16,5 @@ RUN adduser -S -u 1000 -G greg greg
 
 ENTRYPOINT []
 
-CMD ["crond", "-l", "0", "-f"]
+CMD ["crond", "-l", "0", "-f", "-L", "/var/log/cron"]
 
