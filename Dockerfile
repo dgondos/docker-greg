@@ -8,7 +8,7 @@ RUN apk add --no-cache \
  && pip3 install greg stagger
 
 COPY crontab /var/spool/cron/crontabs/root
-COPY greg.conf /etc/greg.conf
+COPY greg.conf /root/.config/greg/greg.conf
 
 USER root
 
