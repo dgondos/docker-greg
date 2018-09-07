@@ -3,14 +3,16 @@ MAINTAINER William Weiskopf <william@weiskopf.me>
 
 RUN apk add --no-cache \
     ca-certificates \
-    python3 \
- && python3 -m ensurepip \
- && pip3 install greg stagger
+    python3
+RUN python3 -m ensurepip
+RUN pip3 install greg stagger
 
-COPY crontab /var/spool/cron/crontabs/root
-COPY greg.conf /root/.config/greg/greg.conf
+COPY crontab /var/spool/cron/crontabs/greg
+COPY greg.conf /home/greg/.config/greg/greg.conf
 
-USER root
+RUN addgroup -S -g 1000 greg
+RUN adduser -S -u 1000 -G greg greg
+USER greg
 
 ENTRYPOINT []
 
