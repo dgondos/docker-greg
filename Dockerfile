@@ -13,7 +13,6 @@ COPY greg.conf /home/greg/.config/greg/greg.conf
 
 RUN addgroup -S -g 1000 greg
 RUN adduser -S -u 1000 -G greg greg
-USER greg
 
 ENTRYPOINT []
 
