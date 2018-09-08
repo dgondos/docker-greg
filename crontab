@@ -1,1 +1,1 @@
-0 1 * * * flock -n /home/greg/greg.lock /usr/bin/greg sync 
+0 * * * * flock -n /home/greg/greg.lock /usr/bin/greg sync 
