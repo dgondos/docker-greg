@@ -4,7 +4,8 @@ MAINTAINER William Weiskopf <william@weiskopf.me>
 RUN apk add --no-cache \
     ca-certificates \
     python3 \
-    busybox-suid
+    busybox-suid \
+    wget
 RUN python3 -m ensurepip
 RUN pip3 install greg stagger
 
